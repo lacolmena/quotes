@@ -1,0 +1,11 @@
+h1 Add a new quote
+
+form(method="POST", action="/quote/new")
+	p
+		label(for="text") Quote text <br />
+		input#text(name="text")
+	p
+		label(for="author") Quote author <br />
+		input#author(name="author")
+	p
+		input(type="submit", value="Add quote")

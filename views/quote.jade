@@ -1,0 +1,13 @@
+h1 View quote
+
+p= q.text
+
+p= q.author
+
+form(action=encodeURIComponent(q.id), method="POST")
+	p
+		input(name="_method", type="hidden", value="DELETE")
+		input(type="submit", value="Delete")
+
+p
+	a(href="/") Return to the front page
