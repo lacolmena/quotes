@@ -2,10 +2,10 @@ var express = require('express');
 var app = express();
 
 var quotes = [
-	{ author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!", id: 0 },
-	{ author : 'Walt Disney', text : "You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you.", id: 1 },
-  	{ author : 'Unknown', text : "Even the greatest was once a beginner. Don't be afraid to take that first step.", id: 2 },
-  	{ author : 'Neale Donald Walsch', text : "You are afraid to die, and you're afraid to live. What a way to exist.", id: 3 }
+	{ author : 'Marcel Proust', text : "The time which we have at our disposal every day is elastic; the passions we feel expand it, those that we inspire contract it, and habit fills up what remains.", id: 0 },
+	{ author : 'Aristotle', text : "We live in deeds, not years; in thoughts not breaths; in feelings, not in figures on a dial. We should count time by heart throbs. He most lives who thinks most, feels the noblest, acts the best.", id: 1 },
+  	{ author : 'Muhammad Ali', text : "The fight is won or lost far away from the witnesses, behind the lines, in the gym, and out there on the road; long before I dance under those lights.", id: 2 },
+  	{ author : 'Leonardo', text : "Once you have flown, you will walk the earth with your eyes turned skywards, for there you have been, and there you long to return.", id: 3 }
 ];
 
 app.configure(function(){
