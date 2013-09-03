@@ -7,18 +7,6 @@ block content
 	p
 		- for(var q in quotes) {
 			p
-				a(href="/quote/" + encodeURIComponent(q))= quotes[q].text + " -- " + quotes[q].author
+				a(href="/quote/" + encodeURIComponent(q))!= quotes[q].text + " &mdash; " + quotes[q].author
 
 		- };
-
-block sidebar
-	.widget
-		h1 Navigation
-		p
-			a(href="/") Show a random quote
-
-		p
-			a(href="/quote/new") Add a new quote
-			
-		p
-			a(href="/quote/all") View all quotes

@@ -8,21 +8,9 @@ block content
 
 	p= q.text
 
-	p= q.author
+	p!= "&mdash;" + q.author
 
 	form(action=encodeURIComponent(q.id), method="POST")
 		p
 			input(name="_method", type="hidden", value="DELETE")
 			input(type="submit", value="Delete")
-
-block sidebar
-	.widget
-		h1 Navigation
-		p
-			a(href="/") Show a random quote
-
-		p
-			a(href="/quote/new") Add a new quote
-			
-		p
-			a(href="/quote/all") View all quotes

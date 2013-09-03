@@ -8,16 +8,4 @@ block content
 
 	p= q.text
 
-	p= q.author
-
-block sidebar
-	.widget
-		h1 Navigation
-		p
-			a(href="/") Show a random quote
-
-		p
-			a(href="/quote/new") Add a new quote
-
-		p
-			a(href="/quote/all") View all quotes
+	p!= "&mdash;" + q.author

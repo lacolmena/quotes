@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+	h2 Quote added
+
+	br
+
+	p Your quote has been added to the list.
+
+block sidebar
+	.nav
+		h1 Navigation
+		p
+			a(href="/") Show a random quote
+
+		p
+			a(href="/quote/new") Add a new quote
+			
+		p
+			a(href="/quote/all") View all quotes

@@ -30,14 +30,14 @@ app.use(stylus.middleware(
 	{ src: __dirname + '/public', compile: compile}));
 });
 
-app.get('/quote/all', function (req, res) {
-	res.render('quotes', {title: 'Quotes', quotes: quotes});
-});
-
 app.get('/', function (req, res) {
 	var id = Math.floor(Math.random() * quotes.length);
 	var q = quotes[id];
 	res.render('random', { q: q } );
+});
+
+app.get('/quote/all', function (req, res) {
+	res.render('quotes', {title: 'Quotes', quotes: quotes});
 });
 
 app.get('/quote/new', function (req, res) {
@@ -65,7 +65,7 @@ app.post('/quote/new', function (req, res) {
 		id: quotes.length
 	};
 	quotes.push(newQuote);
-	res.redirect('/');
+	res.render('added');
 });
 
 app.delete('/quote/:id', function (req, res) {
@@ -75,7 +75,7 @@ app.delete('/quote/:id', function (req, res) {
 	}
 	console.log(req.params.id);
 	delete quotes[req.params.id];
-	res.redirect('/');
+	res.render('deleted');
 });
 
 app.listen(process.env.port || 3000, function() {
