@@ -1,11 +1,29 @@
-h1 Add a new quote
+extends layout
 
-form(method="POST", action="/quote/new")
-	p
-		label(for="text") Quote text <br />
-		input#text(name="text")
-	p
-		label(for="author") Quote author <br />
-		input#author(name="author")
-	p
-		input(type="submit", value="Add quote")
+block content
+
+	h2 Add a new quote
+
+	br
+
+	form(method="POST", action="/quote/new")
+		p
+			label(for="text") Quote text <br />
+			textarea#text(name="text")
+		p
+			label(for="author") Quote author <br />
+			input#author(name="author")
+		p
+			input(type="submit", value="Add quote")
+
+block sidebar
+	.widget
+		h1 Navigation
+		p
+			a(href="/") Show a random quote
+
+		p
+			a(href="/quote/new") Add a new quote
+			
+		p
+			a(href="/quote/all") View all quotes

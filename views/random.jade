@@ -1,11 +1,23 @@
-h1 Random quote
+extends layout
 
-p= q.text
+block content
 
-p= q.author
+	h2 Random quote
 
-p
-	a(href="/quote/random") Show another random quote
+	br
 
-p
-	a(href="/") Return to the front page
+	p= q.text
+
+	p= q.author
+
+block sidebar
+	.widget
+		h1 Navigation
+		p
+			a(href="/") Show a random quote
+
+		p
+			a(href="/quote/new") Add a new quote
+
+		p
+			a(href="/quote/all") View all quotes

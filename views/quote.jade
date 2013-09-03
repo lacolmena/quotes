@@ -1,13 +1,28 @@
-h1 View quote
+extends layout
 
-p= q.text
+block content
 
-p= q.author
+	h2 View quote
 
-form(action=encodeURIComponent(q.id), method="POST")
-	p
-		input(name="_method", type="hidden", value="DELETE")
-		input(type="submit", value="Delete")
+	br
 
-p
-	a(href="/") Return to the front page
+	p= q.text
+
+	p= q.author
+
+	form(action=encodeURIComponent(q.id), method="POST")
+		p
+			input(name="_method", type="hidden", value="DELETE")
+			input(type="submit", value="Delete")
+
+block sidebar
+	.widget
+		h1 Navigation
+		p
+			a(href="/") Show a random quote
+
+		p
+			a(href="/quote/new") Add a new quote
+			
+		p
+			a(href="/quote/all") View all quotes
