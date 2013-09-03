@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
 	res.render('quotes', {title: 'Quotes', quotes: quotes});
-})
+});
 
 app.get('/quote/random', function (req, res) {
 	var id = Math.floor(Math.random() * quotes.length);
@@ -29,7 +29,7 @@ app.get('/quote/random', function (req, res) {
 
 app.get('/quote/new', function (req, res) {
 	res.render('new');
-})
+});
 
 app.get('/quote/:id', function (req, res) {
 	if (quotes.length <= req.params.id || req.params.id < 0 ) {
@@ -61,7 +61,7 @@ app.delete('/quote/:id', function (req, res) {
 		return res.send('Error 404: No quote found.');
 	}
 	console.log(req.params.id);
-	quotes.splice(req.params.id, 1);
+	delete quotes[req.params.id];
 	res.redirect('/');
 });
 
