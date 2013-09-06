@@ -1,7 +1,7 @@
 quotes
 ======
 
-A simple app for displaying random quotes.
+A simple app for displaying quotes.
 
 To use:
 
