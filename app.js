@@ -88,6 +88,6 @@ app.delete('/quote/:id', function (req, res) {
 	res.render('deleted')
 })
 
-app.listen(process.env.port || 3000, function() {
-	console.log("Listening on port 3000 in %s mode.", app.settings.env);
+app.listen(process.env.port || 5000, function() {
+	console.log("Listening on port 5000 in %s mode.", app.settings.env);
 })
