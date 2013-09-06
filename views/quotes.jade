@@ -7,6 +7,6 @@ block content
 	p
 		- for(var q in quotes) {
 			p
-				a(href="/quote/" + encodeURIComponent(q))!= quotes[q].text + " &mdash; " + quotes[q].author
-
+				a(href="/quote/" + encodeURIComponent(quotes[q]._id))!= quotes[q].text + " &mdash; " + quotes[q].author
+			hr
 		- };
