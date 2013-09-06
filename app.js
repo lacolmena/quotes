@@ -3,7 +3,18 @@ var express = require('express'),
 	nib = require('nib'),
 	mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/quotes')
+var uristring = 
+process.env.MONGOLAB_URI || 
+process.env.MONGOHQ_URL || 
+'mongodb://heroku_app17969369:f0ffs6s67i4uqkm1ha3p86862v@ds043338.mongolab.com:43338/heroku_app17969369/quotes'
+
+mongoose.connect(uristring, function (err, res) {
+  if (err) { 
+  console.log ('ERROR connecting to: ' + uristring + '. ' + err)
+  } else {
+  console.log ('Succeeded connecting to: ' + uristring)
+  }
+})
 
 var Schema = mongoose.Schema
 var QuoteSchema = new Schema({
@@ -88,6 +99,6 @@ app.delete('/quote/:id', function (req, res) {
 	res.render('deleted')
 })
 
-app.listen(process.env.port || 3000, function() {
-	console.log("Listening on port 3000 in %s mode.", app.settings.env);
+app.listen(process.env.port || 5000, function() {
+	console.log("Listening on port 5000 in %s mode.", app.settings.env);
 })
