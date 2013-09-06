@@ -2,11 +2,13 @@ extends layout
 
 block content
 
-	h2 List of all quotes
+	h2= title
 
 	p
 		- for(var q in quotes) {
 			p
-				a(href="/quote/" + encodeURIComponent(quotes[q]._id))!= quotes[q].text + " &mdash; " + quotes[q].author
+				a(href="/quote/" + encodeURIComponent(quotes[q]._id))!= quotes[q].text 
+				span!=" &mdash; "
+				a(href="/author/" + encodeURIComponent(quotes[q].author))!=quotes[q].author
 			hr
 		- };

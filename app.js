@@ -34,7 +34,7 @@ app.use(stylus.middleware(
 
 app.get('/', function (req, res) {
 	Quote.find({}, function (err, data) {
-		res.render('quotes', {title: 'Quotes', quotes: data})
+		res.render('quotes', {title: 'List of all quotes', quotes: data})
 	})
 })
 
@@ -44,7 +44,13 @@ app.get('/quote/new', function (req, res) {
 
 app.get('/quote/:id', function (req, res) {
 	Quote.findById(req.params.id, function (err, data) {
-		res.render('quote', { q: data} )
+		res.render('quote', {q: data} )
+	})
+})
+
+app.get('/author/:id', function (req, res) {
+	Quote.find({author: req.params.id}, function (err, data) {
+		res.render('quotes', {title: "Quotes from " + req.params.id, quotes: data})
 	})
 })
 
