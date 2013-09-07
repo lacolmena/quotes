@@ -26,12 +26,6 @@ var Quote = mongoose.model('Quote', QuoteSchema)
 
 var app = express()
 
-function compile (str, path) {
-	return stylus (str)
-		.set('filename', path)
-		.use(nib())
-}
-
 app.configure(function(){
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
@@ -42,6 +36,12 @@ app.use(express.static(__dirname + '/public'))
 app.use(stylus.middleware(
 	{ src: __dirname + '/public', compile: compile}))
 })
+
+function compile (str, path) {
+	return stylus (str)
+		.set('filename', path)
+		.use(nib())
+}
 
 app.get('/', function (req, res) {
 	Quote.find({}, function (err, data) {
