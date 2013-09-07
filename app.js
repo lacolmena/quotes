@@ -99,6 +99,7 @@ app.delete('/quote/:id', function (req, res) {
 	res.render('deleted')
 })
 
-app.listen(process.env.port || 5000, function() {
-	console.log("Listening on port 5000 in %s mode.", app.settings.env);
+var port = process.env.PORT || 5000
+app.listen(port, function() {
+  console.log("Listening on " + port)
 })
