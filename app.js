@@ -6,7 +6,7 @@ var express = require('express'),
 var uristring = 
 process.env.MONGOLAB_URI || 
 process.env.MONGOHQ_URL || 
-'mongodb://heroku_app17969369:f0ffs6s67i4uqkm1ha3p86862v@ds043338.mongolab.com:43338/heroku_app17969369'
+'mongodb://localhost/quotes'
 
 mongoose.connect(uristring, function (err, res) {
   if (err) { 
