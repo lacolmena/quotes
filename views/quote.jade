@@ -2,13 +2,15 @@ extends layout
 
 block content
 
-	h2 View quote
+	h2= title
 
 	br
 
 	p= q.text
 
-	p!= "&mdash;" + q.author
+	a(href="/author/" + q.author)!= "&mdash;" + q.author
+
+	p
 
 	form(action=encodeURIComponent(q.id), method="POST")
 		p
