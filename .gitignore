@@ -217,4 +217,4 @@ pip-log.txt
 ## Node modules
 
 node_modules/
-stylesheets/style.css
+public/stylesheets/style.css
