@@ -1,0 +1,1 @@
+{"name":"Quotes","tagline":"A simple app for displaying quotes.","body":"###quotes\r\n\r\nTo use:\r\n```\r\nInstall and run MongoDB\r\nRun 'npm install' from the quotes directory\r\nRun 'node app.js'\r\n```\r\n","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
